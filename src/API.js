@@ -18,6 +18,14 @@ const API = {
       .catch((err) => {
         console.log('ERROR! API.fetchChatRooms', err);
       });
+  },
+
+  sendNewRoom (newRoom) {
+    axios.post('/api/chat/', newRoom)
+      // .then(this.fetchChatRooms)
+      .catch((err) => {
+        console.log('ERROR! API.sendNewRoom', err);
+      });
   }
 };
 

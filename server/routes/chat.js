@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const io = require('socket.io')()
 
 const Chat = require('../models/Chat');
+
 
 router.route('/room/:name')
   .get((req, res) => {
@@ -26,6 +28,8 @@ router.route('/room/:name')
         return chatRoom.save();
       })
       .then((chatRoom) => {
+        console.log('chatRoom in chat: ', chatRoom);
+        req.socketEmitter('click', chatRoom);
         res.send(chatRoom);
       })
       .catch((err) => {

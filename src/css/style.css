@@ -14,3 +14,20 @@ h1 {
   margin-bottom: 50px;
   letter-spacing: 3px;
 }
+
+#parent {
+  border-radius: 25px;
+  border: 2px solid #20ad48;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
+  /*box-shadow: 0 0 30px #20ad48;*/
+   /*padding:0 15px 0 15px;*/
+}
+
+.updateButton {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

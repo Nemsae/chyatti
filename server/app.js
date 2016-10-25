@@ -10,8 +10,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
 const mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
@@ -23,14 +21,11 @@ mongoose.connect(MONGODB_URI, (err) => {
 //  APP DECLARATION
 const app = express();
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 
 //  WEBPACK CONFIG
-const compiler = webpack(webpackConfig);
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath
-}));
-app.use(require('webpack-hot-middleware')(compiler));
+require('./config/webpack')(app);
+require('./config/socket')(app, io);
 
 //  GENERAL MIDDLEWARE
 app.use(morgan('dev'));
