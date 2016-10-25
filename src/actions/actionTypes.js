@@ -1,0 +1,1 @@
+export const RECEIVE_CHAT_ROOMS = 'RECEIVE_CHAT_ROOMS';

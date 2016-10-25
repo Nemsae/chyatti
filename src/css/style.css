@@ -1,0 +1,16 @@
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+.createRoom {
+  width: 100%
+}
+
+.createRoomBtn {
+  border-radius: 0px;
+}
+
+h1 {
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
